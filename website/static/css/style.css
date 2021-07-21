@@ -1,0 +1,16 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+:root {
+    --darkbg: #000000;
+    --lightbg: #ffffff;
+    
+}
+
+.mainclr
+{
+    color: var(--blue);
+    background-color: var(--blue);
+}
