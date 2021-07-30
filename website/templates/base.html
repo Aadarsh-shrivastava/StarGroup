@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
    
 </head>
-<body class='bg-gray-100 dark:bg-black'>
-    {% include 'nav.html' %}
+<body class='dark:bg-gray-100 bg-gray-900'>
+    {% include 'nav.html' %}    
    
     {% block content %}{% endblock content %}  
 <script>
@@ -35,5 +35,5 @@
 {% block js %}{% endblock js %}
 
 </body>
-{% comment %} {% include 'footer.html' %} {% endcomment %}
+{% include 'footer.html' %}
 </html>
