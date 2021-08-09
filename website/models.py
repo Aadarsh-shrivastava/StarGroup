@@ -20,7 +20,7 @@ class Products(models.Model):
     ppic=models.TextField(null=True)
     pprice=models.IntegerField()
 
-class members(models.Model):
+class Members(models.Model):
     mpic=models.TextField(null=True)
     mname=models.TextField(max_length=30)
     mposition=models.TextField(max_length=30)
@@ -28,3 +28,28 @@ class members(models.Model):
 class Shop(models.Model):
     spic=models.TextField(null=True)
 
+
+class Cctv(models.Model):
+    cctvpic=models.TextField(null=True)
+    cctvname=models.TextField(null=True)
+    cctvdesc=models.TextField(null=True)
+    cctvprice=models.TextField(null=True)
+
+class Stats(models.Model):
+    scustomer=models.IntegerField()
+    ssells=models.IntegerField()
+    sproducts=models.IntegerField()
+    smembers=models.IntegerField()
+
+
+class customer_review(models.Model):
+    cusname=models.TextField(null=True)
+    cuspic=models.TextField(null=True)
+    cusreview=models.TextField(null=True)
+'''
+class Testimony():
+    nuser=models.IntegerField()
+
+
+
+'''

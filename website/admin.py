@@ -17,3 +17,19 @@ class ShopModelAdmin(admin.ModelAdmin):
 class ProductsModelAdmin(admin.ModelAdmin):
      list_display=['pname','pdesc','ppic','pprice']
 
+@admin.register(Cctv)
+class CctvModelAdmin(admin.ModelAdmin):
+     list_display=['cctvname','cctvdesc','cctvpic','cctvprice']
+
+@admin.register(Members)
+class MembersModelAdmin(admin.ModelAdmin):
+     list_display=['mname','mposition','mpic']
+
+@admin.register(Stats)
+class StatsModelAdmin(admin.ModelAdmin):
+     list_display=['scustomer','ssells','sproducts','smembers']
+
+@admin.register(customer_review)
+class crModelAdmin(admin.ModelAdmin):
+     list_display=['cusname','cusreview','cuspic']
+

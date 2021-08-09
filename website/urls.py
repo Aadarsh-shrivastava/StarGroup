@@ -7,6 +7,7 @@ urlpatterns = [
     path('CCTV/',views.cctv),
     path('about/',views.about),
     path('shwprdct/<str:pname>',views.shwprdct),
+    path('shwcctv/<str:cctvname>',views.shwcctv),
     
     
 ]
