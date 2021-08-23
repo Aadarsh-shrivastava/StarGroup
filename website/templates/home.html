@@ -6,8 +6,8 @@
 
 
 {% comment %} top {% endcomment %}
-<div class="slate0  py-52">
-     
+<div class="slate0  h-screen">
+   <img src="https://images.unsplash.com/photo-1610465299993-e6675c9f9efa?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwd2FsbHBhcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
 </div>
 
 
@@ -16,10 +16,10 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto flex flex-col ">
     {% for post in posts %}
-    <div class="lg:w-4/6 mx-auto">
+    <div class="lg:w-4/6 mx-auto py-10">
     {% if post.show %}
-    <div class='bg-white shadow-lg m-auto rounded-2xl'>
-      <div class="rounded-t-lg h-64 overflow-hidden ">
+    <div class='bg-white shadow-lg m-auto rounded-3xl'>
+      <div class="rounded-t-3xl h-64 overflow-hidden ">
         <img alt="content" class="object-cover object-center h-full w-full " src="{{post.pic}}">
       </div>
       <div class="flex flex-col sm:flex-row mt-10">
@@ -53,17 +53,5 @@
 </section>
 
 
-<section class="text-gray-600 body-font overflow-hidden">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-12">
-      <div class="p-12 md:w-1/2 flex flex-col items-start">
-        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/13B5B/production/_107513708_cctvbordersgetty.jpg" alt="" class='rounded'>
-        <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">Roof party normcore before they sold out, cornhole vape</h2>
-        <p class="leading-relaxed text-white dark:text-gray-700 mb-8">Live-edge letterpress cliche, salvia fanny pack humblebrag narwhal portland. VHS man braid palo santo hoodie brunch trust fund. Bitters hashtag waistcoat fashion axe chia unicorn. Plaid fixie chambray 90's, slow-carb etsy tumeric. Cray pug you probably haven't heard of them hexagon kickstarter craft beer pork chic.</p>
-        <div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
-      </div>
-    </div>
-  </div>
-</section>
 
 {% endblock content %}

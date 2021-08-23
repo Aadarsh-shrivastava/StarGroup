@@ -8,11 +8,13 @@
     --lightbg: #ffffff;
     --grad1: linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% );
     --grad2: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
+    --boxer:radial-gradient( circle 300px at 8% 89.3%,  rgba(20,157,208,1) 0%, rgba(140,63,226,1) 90% );
     
 }
 
 .bgparts{
-    background:yellow;
+    background-color:red;
+    color: var(--lightbg);
 }
 
 .zx1{
