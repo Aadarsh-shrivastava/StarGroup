@@ -11,9 +11,19 @@
       <div class="sm:w-1/2 mb-10 px-4 ">
         {% if cam.cctvpic %}
         <div class="rounded-lg h-64 overflow-hidden ">
-          <img alt="content" class="object-cover object-center h-full w-full" src="{{cam.cctvpic}}">
+          <img alt="content" class="object-cover object-center h-full w-full" src="{{cam.cctvpic.url}}">
         </div>
-        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">{{cam.cctvname|truncatewords:9|safe|wordwrap:25}}</h2>
+        <div class="flex justify-between place-items-center ">
+            <h2 class="text-gray-200 title-font text-lg font-medium">{{cam.cctvname}}</h2>
+                    <form action="/addtowishlist2/CCTV/{{cam.id}}" method="post">
+                    {% csrf_token %}
+                      <button type="submit">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="red"  {% if cam in wl %} fill="red" {% else %} fill="none" {% endif %} stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path></svg>
+                    </button>
+                    </form>
+          </div>
         <p class="leading-relaxed text-base">{{cam.cctvdesc|truncatewords:25|safe|wordwrap:25}}</p>
         <p class="leading-relaxed text-base">{{cam.cctvprice}}</p>
         <a href="/shwcctv/{{cam.cctvname}}">

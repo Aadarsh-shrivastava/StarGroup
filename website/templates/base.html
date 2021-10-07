@@ -9,31 +9,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
    
 </head>
-<body class='bg-gray-100    dark:bg-black'>
+<body class='dark:bg-black'>
     {% include 'nav.html' %}    
    
     {% block content %}{% endblock content %}  
-<script>
 
-    document.getElementById("switchTheme").addEventListener('click',function(){
-        let htmlClasses=document.querySelector('html').classList;
-        let themeIcon=document.getElementById('swThemeIcon').classList;
-        if(localStorage.theme==='dark'){
-            htmlClasses.remove('dark');
-            themeIcon.remove('la-sun');
-            themeIcon.add('la-moon');
-            localStorage.removeItem('theme');    
-        }
-        else{
-            htmlClasses.add('dark');
-            themeIcon.remove('la-moon');
-            themeIcon.add('la-sun');
-            localStorage.theme='dark';
-        }
-    })
-</script>
 {% block js %}{% endblock js %}
 
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
 {% include 'footer.html' %}
 </html>

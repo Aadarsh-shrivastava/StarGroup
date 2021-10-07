@@ -9,22 +9,15 @@
       <a href='/CCTV' class="mr-5 hover:text-black hover:bg-yellow-500 px-1 rounded-sm">CCTV</a>
       <a href='/gallery' class="mr-5 hover:text-black hover:bg-yellow-500 px-1 rounded-sm">Gallery</a>
       <a href='/about' class="mr-5 hover:text-black hover:bg-yellow-500 px-1 rounded-sm">About Us</a>
+      <a href='/profile' class="mr-5 hover:text-black hover:bg-yellow-500 px-1 rounded-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="7" r="4" />
+      <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg></a>
 
     </nav>
 
-    <button id="switchTheme" class="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">
-    <i id="swThemeIcon" class="las la-2x"></i>
-    </button>
+    
   </div>
 </header>
-<script>
-  let themeIcon=document.getElementById('swThemeIcon').classList;
-  if(localStorage.theme==='dark'){
-    themeIcon.remove('la-moon');
-    themeIcon.add('la-sun');
-  }
-  else{
-    themeIcon.remove('la-sun');
-    themeIcon.add('la-moon');
-  } 
-</script>

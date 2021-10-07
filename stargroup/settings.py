@@ -9,7 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from os import name
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +28,17 @@ SECRET_KEY = 'django-insecure-o#+s0yaw3#t$r0ll3t$#o74!deo@&wqetm#7*zf$yq#j#qx5zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'aadarshkhurai@gmail.com'
+EMAIL_HOST_PASSWORD = 'utaixwljgknvvjyu'
+EMAIL_PORT = 587
 ALLOWED_HOSTS = []
-
+cloudinary.config( 
+  cloud_name = "stargroup", 
+  api_key = "287557119962353", 
+  api_secret = "FQnSlnmcmM92VyORSxOdS0Xs70k" 
+)
 
 # Application definition
 
@@ -71,7 +83,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'stargroup.wsgi.application'
 
-
+AUTH_USER_MODEL = 'website.User'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
