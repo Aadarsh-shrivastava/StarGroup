@@ -68,11 +68,7 @@ class GalleryModelAdmin(admin.ModelAdmin):
 
 @admin.register(Products)
 class ProductsModelAdmin(admin.ModelAdmin):
-     list_display=['pname','pdesc','ppic','pprice']
-
-@admin.register(Cctv)
-class CctvModelAdmin(admin.ModelAdmin):
-     list_display=['cctvname','cctvdesc','cctvpic','cctvprice']
+     list_display=['name','desc','pic','price']
 
 @admin.register(Members)
 class MembersModelAdmin(admin.ModelAdmin):

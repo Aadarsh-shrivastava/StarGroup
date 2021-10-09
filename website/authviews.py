@@ -46,7 +46,7 @@ def user_signup(request):
             form = SignUpForm()
         return render(request, 'auth/signup.html', {'form':form})
     else:
-        return HttpResponseRedirect('/dashboard')
+        return HttpResponseRedirect('/profile')
 
 def user_activation(request, uidb64, token):
     try:
@@ -56,6 +56,7 @@ def user_activation(request, uidb64, token):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
+        Profile.objects.create(user=user)
         user.save()
         login(request, user)
         messages.success(request, 'Account Activated')
@@ -75,7 +76,7 @@ def user_login(request):
                 if user is not None:
                     login(request,user)
                     messages.error(request,"Loggeg in Successfully")
-                    return HttpResponseRedirect('/dashboard')
+                    return HttpResponseRedirect('/profile')
                 else:
                     messages.error(request,"User doesn't exist")
                     return HttpResponseRedirect('/')
@@ -86,7 +87,7 @@ def user_login(request):
             form = LoginForm()
             return render(request, 'auth/login.html',{'form':form})
     else:
-        return HttpResponseRedirect('/dashboard')
+        return HttpResponseRedirect('/profile')
 
 def user_logout(request):
     logout(request)

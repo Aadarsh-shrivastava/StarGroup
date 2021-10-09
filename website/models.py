@@ -79,31 +79,23 @@ class Gallery(models.Model):
 
 
 class Products(models.Model):
-    pname=models.TextField(max_length=200)
-    pdesc=models.TextField(max_length=20000)
-    ppic=CloudinaryField(overwrite=True,null=True,blank=True)
-    pprice=models.IntegerField()
+    name=models.TextField(max_length=200)
+    desc=models.TextField(max_length=20000)
+    pic=CloudinaryField(overwrite=True,null=True,blank=True)
+    price=models.IntegerField()
+    isCctv=models.BooleanField(default=False)
     def __str__(self) -> str:
-        return self.pname    
+        return self.name    
 class Members(models.Model):
     mpic=CloudinaryField(overwrite=True,null=True,blank=True)
     mname=models.TextField(max_length=30)
     mposition=models.TextField(max_length=30)
-
-class Cctv(models.Model):
-    cctvpic=CloudinaryField(overwrite=True,null=True,blank=True)
-    cctvname=models.TextField(null=True)
-    cctvdesc=models.TextField(null=True)
-    cctvprice=models.TextField(null=True)
-    def __str__(self) -> str:
-        return self.cctvname
                
 class Stats(models.Model):
     scustomer=models.IntegerField()
     ssells=models.IntegerField()
     sproducts=models.IntegerField()
     smembers=models.IntegerField()
-
 
 class customer_review(models.Model):
     cusname=models.TextField(null=True)
@@ -113,4 +105,3 @@ class customer_review(models.Model):
 class Profile(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     product_wishlist=models.ManyToManyField(Products,related_name="Product_wishlist",blank=True)
-    cctv_wishlist=models.ManyToManyField(Cctv,related_name="CCTV_wishlist",blank=True)
