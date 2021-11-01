@@ -28,7 +28,7 @@ def user_signup(request):
                 user = form.save()
                 
                 current_site = get_current_site(request)
-                mail_subject = 'Activate your ICHG account.'
+                mail_subject = 'Activate your STARGROUP account.'
                 message = render_to_string('auth/email_template.html', {
                     'user': user,
                     'domain': current_site.domain,
