@@ -14,7 +14,7 @@
         <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{product.name}}</h1>
         
         <p class="leading-relaxed">{{product.desc}}</p>
-        <h2 class="title-font font-medium text-2xl text-gray-900">{{product.price}}</h2>
+        <h2 class="title-font font-medium text-2xl text-gray-900">₹{{product.price}}</h2>
         <div class="flex">
           {% if request.user.is_authenticated %}
             <form action="/addtowishlist/product/{{product.id}}" method="post">
